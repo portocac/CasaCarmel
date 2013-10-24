@@ -1,0 +1,44 @@
+a:link {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #993300;
+	text-decoration: underline;
+}
+.titulogrande {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 36px;
+	color: #7F3353;
+}
+
+a:visited {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #CC0000;
+}
+.texto {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #663333;
+}
+.titulo {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #663333;
+}
+.bajo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #990000;
+}
+.textoid {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000066;
+}

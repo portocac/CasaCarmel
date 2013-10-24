@@ -1,0 +1,154 @@
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+  
+
+if (window.taValidate == undefined) {
+   window.taOnLoad   = window.onload;
+   window.taValList  = Array();
+   window.taValIndex = 0;
+   window.taValidate = function () {
+      if (window.taOnLoad != null) {
+         try {
+         window.taOnLoad();
+         } catch (err) { }
+      }
+      for (ii = 0; ii < window.taValIndex; ii=ii+1) {
+         fname = window.taValList[ii]
+         fname();
+      }
+   }
+   window.taAddValidator = function (fname) {
+      window.taValList[window.taValIndex] = fname;
+      window.taValIndex                   = window.taValIndex + 1;
+      }
+   window.onload = window.taValidate
+}
+window.taAddValidator (injectrated9424)
+
+                  if(document.createStyleSheet) {
+        document.createStyleSheet("http://c1.tacdn.com/css2/widget/cdswidFRR-v968959094a.css");
+      } else {
+        var stylesImport = "@import url(' http://c1.tacdn.com/css2/widget/cdswidFRR-v968959094a.css ');";
+        var newSS=document.createElement('link');
+        newSS.rel='stylesheet';
+        newSS.href='data:text/css,'+escape(stylesImport);
+        if (document.getElementsByTagName("head")[0]) {
+            document.getElementsByTagName("head")[0].appendChild(newSS);
+        } else {             document.write('<link rel="stylesheet" href="data:text/css,' + escape(stylesImport) + '"/>');
+        }
+      }
+        
+      var newJs = document.createElement('script');
+    newJs.setAttribute('type', 'text/javascript');
+    newJs.setAttribute('src', 'http://c1.tacdn.com/jswidget/CdsWidgets-v2588564340a.js');
+    document.getElementsByTagName("head")[0].appendChild(newJs);
+  
+var validityRegEx = [
+    new RegExp('https?://([^/]+\.|)tripadvisor\.(com\.ar|ca|com|jp|co\.uk|de|dk|ie|fr|com\.mx|co\.id|com\.my|it|com\.br|com\.tr|com\.eg|se|in|co\.kr|com\.gr|com\.sg|com\.au|ru|es|com\.tw|nl)/.*')
+  ,  new RegExp('https?://([^/]+\.|)daodao\.(com)/.*')
+];
+
+function injectrated9424() {
+    var container = document.getElementById('TA_rated405');
+  if (container == null) {
+        var scriptTags = document.getElementsByTagName("script");
+    for (var i=0; i<scriptTags.length; i++)
+    {
+      if (scriptTags[i] != null && scriptTags[i].src != null &&
+          scriptTags[i].src.indexOf("rated?uniq=405") >= 0)
+      {
+        var msgElem = document.createElement('div');
+        if (msgElem != null && msgElem != 'undefined')
+        {
+          msgElem.style.margin='8px';
+          msgElem.style.color='red';
+          msgElem.innerHTML="Please check the TripAdvisor code and install again.";
+          var parentElem = scriptTags[i].parentNode;
+          if (parentElem != null && parentElem != 'undefined')
+          {
+            parentElem.appendChild(msgElem);
+          }
+          break;
+        }
+      }
+    }
+    return;
+  }
+
+        var valid = true;
+  var linksNum = 0;
+      var links = container.getElementsByTagName("a");
+    for (var i=0; i<links.length; i++) {
+    var taLink = links[i];
+    var taLinkStr = taLink.href;
+    if (taLinkStr.search(/(daodao|tripadvisor)/) != -1) {
+      linksNum = linksNum + 1;
+      if (typeof(taLink.rel) != 'undefined' && taLink.rel.toLowerCase().indexOf('nofollow') >= 0) {
+        valid = false;
+        continue;
+      }
+            var linkValid = false;
+      for (var x=0; x<validityRegEx.length; x++){
+        if (taLinkStr.match(validityRegEx[x])) {
+          linkValid = true;
+          break;
+        }
+      }
+      if (!linkValid) {
+        continue;
+      }
+    }
+  }
+  if (linksNum == 0) {
+    valid = false;
+  }
+  if (!valid) {
+    var tmpStr = '<dl><dt>' + "Please check the TripAdvisor code and install again." + '</dt></dl>';
+    container.innerHTML = tmpStr;
+  } else {
+    container.innerHTML = '<div id="CDSWIDFRR" class="widFRR"> '+
+'<img class="widFRRIMG" id="CDSWIDFRRIMG" src="http://www.tripadvisor.com/img/cdsi/img2/badges/rated_en-11424-2.gif" alt="Casa Carmel, Guatemala City, Western Highlands"/> '+
+'<var class="widFRRCopy"><a target="_blank" href="http://www.tripadvisor.com/Hotel_Review-g292006-d1466082-Reviews-Casa_Carmel-Guatemala_City_Western_Highlands.html">Casa Carmel</a></var><!--/ cdsRRFCopy--> '+
+'</div><!--/ cdsFRRBadge--> '+
+'';
+  }  
+}
